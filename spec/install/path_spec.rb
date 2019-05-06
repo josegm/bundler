@@ -8,7 +8,7 @@ RSpec.describe "bundle install" do
       end
 
       gemfile <<-G
-        source "file://#{gem_repo1}"
+        source "#{file_uri_for(gem_repo1)}"
         gem "rack"
       G
     end
@@ -89,7 +89,7 @@ RSpec.describe "bundle install" do
       end
 
       gemfile <<-G
-        source "file://#{gem_repo1}"
+        source "#{file_uri_for(gem_repo1)}"
         gem "rack"
       G
     end
@@ -213,7 +213,7 @@ RSpec.describe "bundle install" do
       end
 
       gemfile <<-G
-        source "file://#{gem_repo1}"
+        source "#{file_uri_for(gem_repo1)}"
         gem "very_simple_binary"
       G
 
@@ -245,7 +245,7 @@ RSpec.describe "bundle install" do
 
     it "reports the file exists" do
       gemfile <<-G
-        source "file://#{gem_repo1}"
+        source "#{file_uri_for(gem_repo1)}"
         gem "rack"
       G
 
