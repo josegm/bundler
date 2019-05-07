@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "rubygems"
+require_relative "file_searching_hax"
 
 module Gem
   if version = ENV["BUNDLER_SPEC_RUBYGEMS_VERSION"]

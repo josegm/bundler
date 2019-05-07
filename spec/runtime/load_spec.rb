@@ -45,7 +45,6 @@ RSpec.describe "Bundler.load" do
 
   describe "without a gemfile" do
     it "raises an exception if the default gemfile is not found" do
-      ensure_no_gemfile
       expect do
         Bundler.load
       end.to raise_error(Bundler::GemfileNotFound, /could not locate gemfile/i)
