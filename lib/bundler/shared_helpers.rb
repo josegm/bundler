@@ -249,16 +249,11 @@ module Bundler
     end
 
     def search_up(*names)
-      previous = nil
-      current  = File.expand_path(SharedHelpers.pwd).untaint
-
-      until !File.directory?(current) || current == previous
+      Pathname.new(File.expand_path(SharedHelpers.pwd).untaint).ascend do |current|
         names.each do |name|
           filename = File.join(current, name)
           yield filename
         end
-        previous = current
-        current = File.expand_path("..", current)
       end
     end
 
